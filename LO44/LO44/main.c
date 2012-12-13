@@ -13,6 +13,7 @@ int main(int argc, const char * argv[])
 
     // insert code here...
     printf("Vous etes nul\n");
+    printf("Vous etes nul!!!!!!!\n");
     return 0;
 }
 
