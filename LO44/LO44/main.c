@@ -12,6 +12,7 @@
 int main (){
     
     printf("Salut tout le monde !!!\n");
+    printf("Top est trop fort !!!\n");
     int i, Z;
     ListeBit Indiv = NULL;
     for (i=1; i<11; i++){

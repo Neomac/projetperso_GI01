@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6014D0811679CF9F00AD92D4 /* random1.c in Sources */ = {isa = PBXBuildFile; fileRef = 6014D0801679CF9F00AD92D4 /* random1.c */; };
 		6030CA9F167946480042FCE4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6030CA9E167946480042FCE4 /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6014D0801679CF9F00AD92D4 /* random1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = random1.c; path = LO44/random1.c; sourceTree = "<group>"; };
 		6030A9F01679CBF90025845D /* ListeBit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListeBit.h; path = LO44/ListeBit.h; sourceTree = "<group>"; };
 		6030CA9A167946470042FCE4 /* LO44 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LO44; sourceTree = BUILT_PRODUCTS_DIR; };
 		6030CA9E167946480042FCE4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = LO44/main.c; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		6030CA8F167946470042FCE4 = {
 			isa = PBXGroup;
 			children = (
+				6014D0801679CF9F00AD92D4 /* random1.c */,
 				6030A9F01679CBF90025845D /* ListeBit.h */,
 				6030CA9E167946480042FCE4 /* main.c */,
 				6030CA9B167946470042FCE4 /* Products */,
@@ -108,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6030CA9F167946480042FCE4 /* main.c in Sources */,
+				6014D0811679CF9F00AD92D4 /* random1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
