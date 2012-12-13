@@ -7,29 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6030CA9F167946480042FCE4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6030CA9E167946480042FCE4 /* main.c */; };
+		60A0078B1679BB02008EDA54 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 60A0078A1679BB02008EDA54 /* main.c */; };
+		60A0078D1679BB02008EDA54 /* LO44_Bon.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 60A0078C1679BB02008EDA54 /* LO44_Bon.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6030CA98167946470042FCE4 /* CopyFiles */ = {
+		60A007841679BB02008EDA54 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
+				60A0078D1679BB02008EDA54 /* LO44_Bon.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6030CA9A167946470042FCE4 /* LO44 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LO44; sourceTree = BUILT_PRODUCTS_DIR; };
-		6030CA9E167946480042FCE4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		60A007931679BB59008EDA54 /* ListeBit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListeBit.h; sourceTree = "<group>"; };
+		60A007861679BB02008EDA54 /* LO44_Bon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LO44_Bon; sourceTree = BUILT_PRODUCTS_DIR; };
+		60A0078A1679BB02008EDA54 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		60A0078C1679BB02008EDA54 /* LO44_Bon.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LO44_Bon.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6030CA97167946470042FCE4 /* Frameworks */ = {
+		60A007831679BB02008EDA54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,90 +41,90 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6030CA8F167946470042FCE4 = {
+		60A0077B1679BB02008EDA54 = {
 			isa = PBXGroup;
 			children = (
-				6030CA9D167946470042FCE4 /* LO44 */,
-				6030CA9B167946470042FCE4 /* Products */,
+				60A007891679BB02008EDA54 /* LO44_Bon */,
+				60A007871679BB02008EDA54 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6030CA9B167946470042FCE4 /* Products */ = {
+		60A007871679BB02008EDA54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6030CA9A167946470042FCE4 /* LO44 */,
+				60A007861679BB02008EDA54 /* LO44_Bon */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6030CA9D167946470042FCE4 /* LO44 */ = {
+		60A007891679BB02008EDA54 /* LO44_Bon */ = {
 			isa = PBXGroup;
 			children = (
-				6030CA9E167946480042FCE4 /* main.c */,
-				60A007931679BB59008EDA54 /* ListeBit.h */,
+				60A0078A1679BB02008EDA54 /* main.c */,
+				60A0078C1679BB02008EDA54 /* LO44_Bon.1 */,
 			);
-			path = LO44;
+			path = LO44_Bon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6030CA99167946470042FCE4 /* LO44 */ = {
+		60A007851679BB02008EDA54 /* LO44_Bon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6030CAA4167946480042FCE4 /* Build configuration list for PBXNativeTarget "LO44" */;
+			buildConfigurationList = 60A007901679BB02008EDA54 /* Build configuration list for PBXNativeTarget "LO44_Bon" */;
 			buildPhases = (
-				6030CA96167946470042FCE4 /* Sources */,
-				6030CA97167946470042FCE4 /* Frameworks */,
-				6030CA98167946470042FCE4 /* CopyFiles */,
+				60A007821679BB02008EDA54 /* Sources */,
+				60A007831679BB02008EDA54 /* Frameworks */,
+				60A007841679BB02008EDA54 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LO44;
-			productName = LO44;
-			productReference = 6030CA9A167946470042FCE4 /* LO44 */;
+			name = LO44_Bon;
+			productName = LO44_Bon;
+			productReference = 60A007861679BB02008EDA54 /* LO44_Bon */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6030CA91167946470042FCE4 /* Project object */ = {
+		60A0077D1679BB02008EDA54 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Antoine Galluet";
 			};
-			buildConfigurationList = 6030CA94167946470042FCE4 /* Build configuration list for PBXProject "LO44" */;
+			buildConfigurationList = 60A007801679BB02008EDA54 /* Build configuration list for PBXProject "LO44_Bon" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 6030CA8F167946470042FCE4;
-			productRefGroup = 6030CA9B167946470042FCE4 /* Products */;
+			mainGroup = 60A0077B1679BB02008EDA54;
+			productRefGroup = 60A007871679BB02008EDA54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6030CA99167946470042FCE4 /* LO44 */,
+				60A007851679BB02008EDA54 /* LO44_Bon */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6030CA96167946470042FCE4 /* Sources */ = {
+		60A007821679BB02008EDA54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6030CA9F167946480042FCE4 /* main.c in Sources */,
+				60A0078B1679BB02008EDA54 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		6030CAA2167946480042FCE4 /* Debug */ = {
+		60A0078E1679BB02008EDA54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -152,7 +154,7 @@
 			};
 			name = Debug;
 		};
-		6030CAA3167946480042FCE4 /* Release */ = {
+		60A0078F1679BB02008EDA54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -175,14 +177,14 @@
 			};
 			name = Release;
 		};
-		6030CAA5167946480042FCE4 /* Debug */ = {
+		60A007911679BB02008EDA54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		6030CAA6167946480042FCE4 /* Release */ = {
+		60A007921679BB02008EDA54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -192,25 +194,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6030CA94167946470042FCE4 /* Build configuration list for PBXProject "LO44" */ = {
+		60A007801679BB02008EDA54 /* Build configuration list for PBXProject "LO44_Bon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6030CAA2167946480042FCE4 /* Debug */,
-				6030CAA3167946480042FCE4 /* Release */,
+				60A0078E1679BB02008EDA54 /* Debug */,
+				60A0078F1679BB02008EDA54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6030CAA4167946480042FCE4 /* Build configuration list for PBXNativeTarget "LO44" */ = {
+		60A007901679BB02008EDA54 /* Build configuration list for PBXNativeTarget "LO44_Bon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6030CAA5167946480042FCE4 /* Debug */,
-				6030CAA6167946480042FCE4 /* Release */,
+				60A007911679BB02008EDA54 /* Debug */,
+				60A007921679BB02008EDA54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6030CA91167946470042FCE4 /* Project object */;
+	rootObject = 60A0077D1679BB02008EDA54 /* Project object */;
 }
