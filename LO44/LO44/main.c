@@ -7,7 +7,7 @@
 //
 
 #include <stdio.h>
-#include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/ListeBit.h>
+#include </../projetperso_GI01/LO44/LO44/ListeBit.h>
 
 int main (){
     
