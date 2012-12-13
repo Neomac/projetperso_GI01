@@ -7,7 +7,8 @@
 //
 
 #include <stdio.h>
-#include <ListeBit.h>
+#include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/listebit.c>
+#include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/random1.c>
 
 int main (){
     
@@ -20,26 +21,30 @@ int main (){
     }
     Z=compt(Indiv);
     printf(Z);
+    random1(20);
     
 }
 
 
 
 int compt(ListeBit A){
-    int n = 0;
+    int n;
     if (A->valeur==0){
+        n=0;
         return(0);
     }
     else if (A->valeur==1){
+        n=1;
         return(1);
     }
     else{
         if (A->valeur%2==1){
-            return(2^(n+1)+ compt((reste(A))));
+            return(2^(n)+ compt((reste(A))));
             n++;
         }
         else{
             return(compt(reste(A)));
+            n++;
         }
     }
 }
