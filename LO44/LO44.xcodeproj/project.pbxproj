@@ -23,9 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6030A9F01679CBF90025845D /* ListeBit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListeBit.h; path = LO44/ListeBit.h; sourceTree = "<group>"; };
 		6030CA9A167946470042FCE4 /* LO44 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LO44; sourceTree = BUILT_PRODUCTS_DIR; };
-		6030CA9E167946480042FCE4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		60A007931679BB59008EDA54 /* ListeBit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListeBit.h; sourceTree = "<group>"; };
+		6030CA9E167946480042FCE4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = LO44/main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,8 @@
 		6030CA8F167946470042FCE4 = {
 			isa = PBXGroup;
 			children = (
-				6030CA9D167946470042FCE4 /* LO44 */,
+				6030A9F01679CBF90025845D /* ListeBit.h */,
+				6030CA9E167946480042FCE4 /* main.c */,
 				6030CA9B167946470042FCE4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,15 +54,6 @@
 				6030CA9A167946470042FCE4 /* LO44 */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		6030CA9D167946470042FCE4 /* LO44 */ = {
-			isa = PBXGroup;
-			children = (
-				6030CA9E167946480042FCE4 /* main.c */,
-				60A007931679BB59008EDA54 /* ListeBit.h */,
-			);
-			path = LO44;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
