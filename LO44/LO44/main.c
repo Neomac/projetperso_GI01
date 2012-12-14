@@ -11,12 +11,12 @@
 #include "listebit.h"
 #include "random1.h"
 
-int conversionbinnum(ListeBit A, int i){
+int conversionbinnum (ListeBit A, int i){
     if (vide(A)==1){
         return 0;
     }
     else{
-        return (A->valeur)*2^(i) + conversionbinnum(reste(A), i+1);
+        return ((A->valeur)*(2^(i)) + conversionbinnum(reste(A), i+1));
     }
 }
 
@@ -26,16 +26,22 @@ int main (){
     printf("Top est trop fort !!!\n");
     
     
-    int i, Z;
+    int i=0;
     ListeBit Indiv = NULL;
+    ListeBit Test = NULL;
+    Test = ajouter_queue(Test, 1);
+    Test = ajouter_queue(Test, 0);
+    Test = ajouter_queue(Test, 1);
+    Test = ajouter_queue(Test, 1);
+    printlist(Test);
     
-    for (i=0; i<4; i++){
+    while (i<4) {
         Indiv = ajouter_queue(Indiv,1);
+        Indiv = ajouter_queue(Indiv,0);
+        i++;
     }
-    
-    Z=conversionbinnum(Indiv, 0);
     printlist(Indiv);
-    printf("Z est %d", Z);
+    printf("Z est %d", conversionbinnum(Indiv, 0));
 }
 
 

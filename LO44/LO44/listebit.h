@@ -49,7 +49,7 @@ int valeur (ListeBit A){
 }
 
 ListeBit reste (ListeBit A){
-    return(A=A->suivant);
+    return(A->suivant);
 }
 
 ListeBit ajouter_queue (ListeBit A, int v){
@@ -73,11 +73,11 @@ ListeBit ajouter_queue (ListeBit A, int v){
 void printlist(ListeBit A){
     ListeBit I;
     if (A==NULL) {
-        printf("Liste vide");
+        printf("Liste vide\n");
     }
     else{
         I=A;
-        while (I->suivant!=NULL) {
+        while (I!=NULL) {
             printf("%d", I->valeur);
             I=I->suivant;
         }
