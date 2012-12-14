@@ -48,6 +48,10 @@ int valeur (Bit A){
         return A.valeur;
 }
 
+ListeBit reste (ListeBit A){
+    return(A=A->suivant);
+}
+
 ListeBit ajouter_queue (ListeBit A, int v){
     ListeBit newel, p;
     newel = (ListeBit) malloc(sizeof(Bit));
@@ -66,8 +70,19 @@ ListeBit ajouter_queue (ListeBit A, int v){
     return A;
 }
 
-ListeBit reste (ListeBit A){
-    return(A=A->suivant);
+void printlist(ListeBit A){
+    ListeBit I;
+    if (A==NULL) {
+        printf("Liste vide");
+    }
+    else{
+        
+        while (I->suivant!=NULL) {
+            printf("%d", I->valeur);
+            I=I->suivant;
+        }
+    }
+    
 }
 
 

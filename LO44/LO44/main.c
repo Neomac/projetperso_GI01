@@ -16,7 +16,7 @@ int compt(ListeBit A, int i){
         return 0;
     }
     else{
-        return (valeur(*A))*2^(i) + compt(reste(A), i+1);
+        return (A->valeur)*2^(i) + compt(reste(A), i+1);
     }
 }
 
