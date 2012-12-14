@@ -12,7 +12,7 @@
 #include "random1.h"
 
 int conversionbinnum (ListeBit A, int i){
-    if (vide(A)==1){
+    if (A==NULL){
         return 0;
     }
     else{
