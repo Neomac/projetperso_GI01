@@ -22,7 +22,7 @@ int conversionbinnum (ListeBit A, int i){
 
 int main (){
     
-    printf("Salut tout le monde !!!\n");
+    printf("Salut tout le monde !!!!!!!\n");
     printf("Top est trop fort !!!\n");
     
     

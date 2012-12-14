@@ -39,5 +39,3 @@ int random1(int prob)
 		return 0;													//Sinon il renvoie 0
 	}
 }
-
-s
