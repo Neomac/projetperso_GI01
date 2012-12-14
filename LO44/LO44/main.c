@@ -7,7 +7,7 @@
 //
 
 #include <stdio.h>
-#include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/listebit.c>
+#include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/listebit.h>
 #include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/random1.c>
 
 int main (){
@@ -27,24 +27,6 @@ int main (){
 
 
 
-int compt(ListeBit A){
-    int n;
-    if (A->valeur==0){
-        n=0;
-        return(0);
-    }
-    else if (A->valeur==1){
-        n=1;
-        return(1);
-    }
-    else{
-        if (A->valeur%2==1){
-            return(2^(n)+ compt((reste(A))));
-            n++;
-        }
-        else{
-            return(compt(reste(A)));
-            n++;
-        }
-    }
+int compt(ListeBit A; int i){
+    if (vide(A)==0)
 }

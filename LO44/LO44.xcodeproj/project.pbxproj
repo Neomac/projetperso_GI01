@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6014D0811679CF9F00AD92D4 /* random1.c in Sources */ = {isa = PBXBuildFile; fileRef = 6014D0801679CF9F00AD92D4 /* random1.c */; };
-		6014D0861679D3FE00AD92D4 /* listebit.c in Sources */ = {isa = PBXBuildFile; fileRef = 6014D0851679D3FE00AD92D4 /* listebit.c */; };
+		6014D0861679D3FE00AD92D4 /* listebit.h in Sources */ = {isa = PBXBuildFile; fileRef = 6014D0851679D3FE00AD92D4 /* listebit.h */; };
 		6030CA9F167946480042FCE4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6030CA9E167946480042FCE4 /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		6014D0801679CF9F00AD92D4 /* random1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = random1.c; path = LO44/random1.c; sourceTree = "<group>"; };
-		6014D0851679D3FE00AD92D4 /* listebit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = listebit.c; path = LO44/listebit.c; sourceTree = "<group>"; };
+		6014D0851679D3FE00AD92D4 /* listebit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = listebit.h; path = LO44/listebit.h; sourceTree = "<group>"; };
 		6030CA9A167946470042FCE4 /* LO44 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LO44; sourceTree = BUILT_PRODUCTS_DIR; };
 		6030CA9E167946480042FCE4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = LO44/main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,7 +45,7 @@
 		6030CA8F167946470042FCE4 = {
 			isa = PBXGroup;
 			children = (
-				6014D0851679D3FE00AD92D4 /* listebit.c */,
+				6014D0851679D3FE00AD92D4 /* listebit.h */,
 				6014D0801679CF9F00AD92D4 /* random1.c */,
 				6030CA9E167946480042FCE4 /* main.c */,
 				6030CA9B167946470042FCE4 /* Products */,
@@ -113,7 +113,7 @@
 			files = (
 				6030CA9F167946480042FCE4 /* main.c in Sources */,
 				6014D0811679CF9F00AD92D4 /* random1.c in Sources */,
-				6014D0861679D3FE00AD92D4 /* listebit.c in Sources */,
+				6014D0861679D3FE00AD92D4 /* listebit.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -49,5 +49,12 @@ ListeBit reste (ListeBit A){
     return(A=A->suivant);
 }
 
+int vide(ListeBit A)){
+    if (A==NULL)
+        return 0;
+    else
+        return 1;
+}
+
 
 #endif
