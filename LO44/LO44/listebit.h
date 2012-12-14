@@ -34,27 +34,42 @@ ListeBit creer (){
     return(A);
 }
 
+int vide (ListeBit A){
+    if (A==NULL)
+        return 0;
+    else
+        return 1;
+}
+
+int valeur (Bit A){
+    if (vide(&A))
+        return 0;
+    else
+        return A.valeur;
+}
+
 ListeBit ajouter_queue (ListeBit A, int v){
-    ListeBit T = A;
-    while (T->suivant!=NULL){
-        T=T->suivant;
+    ListeBit newel, p;
+    newel = (ListeBit) malloc(sizeof(Bit));
+    newel->valeur = v;
+    newel->suivant = NULL;
+    if (vide(A)==0){
+        A=newel;
     }
-    ListeBit new = (ListeBit) malloc (sizeof (Bit));
-    new -> valeur = v;
-    new -> suivant = NULL;
-    return(T->suivant = new);
+    else{
+        p=A;
+        while(p->suivant!=NULL){
+            p=p->suivant;
+        }
+        p->suivant = newel;
+    }
+    return A;
 }
 
 ListeBit reste (ListeBit A){
     return(A=A->suivant);
 }
 
-int vide(ListeBit A)){
-    if (A==NULL)
-        return 0;
-    else
-        return 1;
-}
 
 
 #endif

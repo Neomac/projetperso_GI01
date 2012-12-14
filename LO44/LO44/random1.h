@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<time.h>
 
-void main (void)
+/*void main (void)
 {
 	int nbv, i, prob, result; 
 	i=0;
@@ -22,7 +22,7 @@ void main (void)
 	
 	printf("\n\n");
 	
-}
+}*/
 
 int random1(int prob)
 

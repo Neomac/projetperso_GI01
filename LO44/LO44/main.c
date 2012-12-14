@@ -8,7 +8,17 @@
 
 #include <stdio.h>
 #include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/listebit.h>
-#include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/random1.c>
+#include <math.h>
+#include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/random1.h>
+
+int compt(ListeBit A, int i){
+    if (vide(A)==0){
+        return 0;
+    }
+    else{
+        return (valeur(*A))*2^(i) + compt(reste(A), i+1);
+    }
+}
 
 int main (){
     
@@ -16,17 +26,13 @@ int main (){
     printf("Top est trop fort !!!\n");
     int i, Z;
     ListeBit Indiv = NULL;
-    for (i=1; i<11; i++){
+    for (i=1; i<2; i++){
         Indiv = ajouter_queue(Indiv,1);
     }
-    Z=compt(Indiv);
-    printf(Z);
-    random1(20);
-    
+    Z=compt(Indiv, 0);
+    printf("Z est %d", Z);
 }
 
 
 
-int compt(ListeBit A; int i){
-    if (vide(A)==0)
-}
+
