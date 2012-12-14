@@ -7,16 +7,16 @@
 //
 
 #include <stdio.h>
-#include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/listebit.h>
 #include <math.h>
-#include </Users/HP-Touchpad/projetperso_GI01/LO44/LO44/random1.h>
+#include "listebit.h"
+#include "random1.h"
 
-int compt(ListeBit A, int i){
-    if (vide(A)==0){
+int conversionbinnum(ListeBit A, int i){
+    if (vide(A)==1){
         return 0;
     }
     else{
-        return (A->valeur)*2^(i) + compt(reste(A), i+1);
+        return (A->valeur)*2^(i) + conversionbinnum(reste(A), i+1);
     }
 }
 
@@ -24,12 +24,17 @@ int main (){
     
     printf("Salut tout le monde !!!\n");
     printf("Top est trop fort !!!\n");
+    
+    
     int i, Z;
     ListeBit Indiv = NULL;
-    for (i=1; i<2; i++){
+    
+    for (i=0; i<4; i++){
         Indiv = ajouter_queue(Indiv,1);
     }
-    Z=compt(Indiv, 0);
+    
+    Z=conversionbinnum(Indiv, 0);
+    printlist(Indiv);
     printf("Z est %d", Z);
 }
 
