@@ -41,7 +41,7 @@ int vide (ListeBit A){
         return 0;
 }
 
-int valeur (ListeBit A){
+int valeur_tete (ListeBit A){
     if (A==NULL)
         return 0;
     else

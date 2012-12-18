@@ -10,40 +10,41 @@
 #include <math.h>
 #include "listebit.h"
 #include "random1.h"
+#include "population.h"
 
-int conversionbinnum (ListeBit A, int i){
+ListeBit initialiserIndiv (int taille, int prob){
+    ListeBit A;
+    if (taille==0)
+        return (A =NULL);
+    else{
+        return (ajouter_queue(initialiserIndiv(taille-1, prob), random1(prob)));
+    }
+}
+
+int conversionbinnum (ListeBit A, int i){ //Initialiser i à 0 pour utiliser
+    
     if (A==NULL){
         return 0;
     }
     else{
-        return ((A->valeur)*(2^(i)) + conversionbinnum(reste(A), i+1));
+        return ((valeur_tete(A))*(pow(2, i)) + conversionbinnum(reste(A), i+1));
     }
+}
+
+float qualite (ListeBit A){
+    return (-pow( ( (conversionbinnum (A, 0) /pow(2, 3) ) *(2) -1), 2));
 }
 
 int main (){
     
     printf("Salut tout le monde !!!!!!!\n");
     printf("Top est trop fort !!!\n");
-    
-    
-    int i=0;
-    ListeBit Indiv = NULL;
+
     ListeBit Test = NULL;
-    Test = ajouter_queue(Test, 1);
-    Test = ajouter_queue(Test, 0);
-    Test = ajouter_queue(Test, 1);
-    Test = ajouter_queue(Test, 1);
-    printlist(Test);
     
-    while (i<4) {
-        Indiv = ajouter_queue(Indiv,1);
-        Indiv = ajouter_queue(Indiv,0);
-        i++;
-    }
-    printlist(Indiv);
-    printf("Z est %d", conversionbinnum(Indiv, 0));
+    Test = initialiserIndiv(3, 50);
+    printlist(Test);
+    printf("Qualite : %f\n", qualite(Test));
+    
+    printf("La valeur numerique de Z est %d", conversionbinnum(Test, 0));
 }
-
-
-
-

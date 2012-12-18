@@ -31,6 +31,7 @@
 		6030CA9E167946480042FCE4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = LO44/main.c; sourceTree = "<group>"; };
 		606A0A37167B95A300B806E0 /* LO44 Projet To do List.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "LO44 Projet To do List.rtf"; path = "../LO44 Projet To do List.rtf"; sourceTree = "<group>"; };
 		606A0A38167B95A300B806E0 /* Projet LO44 Structure programme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "Projet LO44 Structure programme.rtf"; path = "../Projet LO44 Structure programme.rtf"; sourceTree = "<group>"; };
+		60C2E6F51680C5BB0061DC96 /* population.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = population.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				606A0A37167B95A300B806E0 /* LO44 Projet To do List.rtf */,
+				60C2E6F51680C5BB0061DC96 /* population.h */,
 				606A0A38167B95A300B806E0 /* Projet LO44 Structure programme.rtf */,
 				6014D0851679D3FE00AD92D4 /* listebit.h */,
 				6014D0801679CF9F00AD92D4 /* random1.h */,
