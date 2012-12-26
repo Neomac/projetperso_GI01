@@ -22,6 +22,10 @@
 #include <math.h>
 
 
+/***********************************/
+/*     Definition Type ListeBit    */
+/***********************************/
+
 typedef struct elem{
     int valeur;
     struct elem * suivant;
@@ -29,35 +33,40 @@ typedef struct elem{
 
 typedef Bit * ListeBit;
 
-ListeBit creer (){
+
+/***********************************/
+/*       Operateurs ListeBit       */
+/***********************************/
+
+ListeBit CreerI (){
     ListeBit A = NULL;
     return(A);
 }
 
-int vide (ListeBit A){
+int VideI (ListeBit A){
     if (A==NULL)
         return 1;
     else
         return 0;
 }
 
-int valeur_tete (ListeBit A){
+int Valeur_Tete_Indiv (ListeBit A){
     if (A==NULL)
         return 0;
     else
         return A->valeur;
 }
 
-ListeBit reste (ListeBit A){
+ListeBit ResteI (ListeBit A){
     return(A->suivant);
 }
 
-ListeBit ajouter_queue (ListeBit A, int v){
+ListeBit Ajouter_Queue_Indiv (ListeBit A, int v){
     ListeBit newel, p;
     newel = (ListeBit) malloc(sizeof(Bit));
     newel->valeur = v;
     newel->suivant = NULL;
-    if (vide(A)==1){      // 1 a la place de 0
+    if (VideI(A)==1){      // 1 a la place de 0
         A=newel;
     }
     else{
@@ -70,7 +79,7 @@ ListeBit ajouter_queue (ListeBit A, int v){
     return A;
 }
 
-void printlist(ListeBit A){
+void PrintList(ListeBit A){
     ListeBit I;
     if (A==NULL) {
         printf("Liste vide\n");
