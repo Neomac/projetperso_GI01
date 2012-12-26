@@ -50,12 +50,12 @@ ListeBit InitialiserIndivIteratif (int taille, int prob)
 
 /* Cree et remplie une liste de bits 'A' de 'taille' valeurs (0 ou 1) selon la probabilite choisie (entre 0 et 100) */
 /* Algorithme recursif */
-ListeBit InitialiserIndiv (int taille, int prob){
+ListeBit InitialiserIndivRecursif(int taille, int prob){
     ListeBit A;
     if (taille==0)					/* Cas trivial, taille sert a la fois a donner le nombre de bits de la liste et de compteur */
         return (A =NULL);		/* Une fois le compteur vide on indique la fin de la liste de bits */
     else{										/* Appel recursif, d'ou la necessite d'avoir un compteur dans les parametres de la fonction */
-        return (Ajouter_Queue_Indiv(InitialiserIndiv(taille-1, prob), random1(prob)));	/* ajout aleatoire en bout de la liste d'un bit */
+        return (Ajouter_Queue_Indiv(InitialiserIndivRecursif(taille-1, prob), random1(prob)));	/* ajout aleatoire en bout de la liste d'un bit */
     }
 }
 

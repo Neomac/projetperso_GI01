@@ -90,7 +90,6 @@ void PrintList(ListeBit A){
             printf("%d", I->valeur);
             I=I->suivant;
         }
-        printf("\n");
     }
     
 }
