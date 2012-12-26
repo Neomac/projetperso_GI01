@@ -34,3 +34,16 @@ void croise( ListeBit a1, ListeBit a2, int pcroise)
 		croise(reste(a1), reste(a2), pcroise);	/* Dans tous les cas, on fait un appel recursif pour passer aux deux bits suivants */
 	}
 }
+
+
+/* Cree et remplie une liste de bits 'A' de 'taille' valeurs (0 ou 1) selon la probabilite choisie (entre 0 et 100) */
+/* Algorithme iteratif */
+ListeBit initialiserIndivIteratif (int taille, int prob)
+{
+	ListeBit A;
+	int i;
+	for (i=0; i<=taille; ++i){					/* On ajoute en queue de la liste A des bits 0 ou 1 jusqu'a avoir la taille souhaitee */
+		ajouter_queue(A, random1(prob));
+	}
+	return A;
+}

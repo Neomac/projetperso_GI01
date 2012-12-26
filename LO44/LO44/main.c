@@ -11,6 +11,7 @@
 #include "listebit.h"
 #include "random1.h"
 #include "population.h"
+#include "sousprog.h"
 
 
 /* Cree et remplie une liste de bits 'A' de 'taille' valeurs (0 ou 1) selon la probabilite choisie (entre 0 et 100) */
