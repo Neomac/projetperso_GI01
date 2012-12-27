@@ -57,6 +57,15 @@ Population ResteP(Population A)
     return(A->suivant);
 }
 
+void PrintPopQualite(Population A)
+{
+	while (VideP(A)==0){
+		PrintList(A->Indiv);
+		printf("   %.3f\n", A->qualite);
+		A = ResteP(A);
+	}
+}
+
 Population ajouter_queue_pop (Population A, ListeBit indiv)
 {
     Population newel, p;
@@ -64,7 +73,7 @@ Population ajouter_queue_pop (Population A, ListeBit indiv)
     newel->Indiv = indiv;
 		newel->qualite=QualiteI(indiv);
     newel->suivant = NULL;
-    if (VideP(A)==1){      // 1 a la place de 0
+    if (VideP(A)){      // 1 a la place de 0
         A=newel;
     }
     else{
@@ -85,5 +94,26 @@ void PrintPop(Population A)
 	}
 }
 
+Population Dernier_Pop(Population p)
+{
+	if(VideP(ResteP(p))){
+		return p;
+	}
+	else{
+		p=Dernier_Pop(ResteP(p));
+		return p;
+	}
+}
+
+Population Avant_Dernier_Pop(Population p)
+{
+	if(VideP(ResteP(p)) || VideP(ResteP(ResteP(p)))){
+		return p;
+	}
+	else{
+		p=Avant_Dernier_Pop(ResteP(p));
+		return p;
+	}
+}
 
 #endif

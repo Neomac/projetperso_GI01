@@ -21,12 +21,11 @@ int random1(int prob)
 void CroiseI( ListeBit a1, ListeBit a2, int pcroise)
 {
 	int tampon;
-	
 	if(VideI(a1)){ /* Cas trivial, rien ne se fait et on resort du sous-programme */
 		
 	}
 	else{																			/* Cas general */
-		if(random1(pcroise)){										/* Si la valeur retournee est 1 on intervertie les bits de deux listes */
+		if(random1(pcroise)){										/* Si la valeur retournee est 1 on intervertie les bits des deux listes */
 			tampon = Valeur_Tete_Indiv(a1);
 			a1->valeur = Valeur_Tete_Indiv(a2);
 			a2->valeur = tampon;
@@ -63,14 +62,14 @@ ListeBit InitialiserIndivRecursif(int taille, int prob){
 /* Convertie les bits d'une liste en de bit en son entier correspondant dans la base decimale */
 /* L'entier 'i' est un compteur indiquant la puissance correspondante du bit */
 /* Algorithme recursif */
-int conversionbinnum (ListeBit A, int i){ //Initialiser i a 0 pour utiliser
+float conversionbinnum (ListeBit A, int i){ //Initialiser i a 0 pour utiliser
     
     if (A==NULL){		/* Cas trivial */
         return 0;		/* Une fois arrivee a la fin on retourne 0 car on fait une somme dans le cas general */
     }
     else{						/* Cas general */
         return ((Valeur_Tete_Indiv(A))*(pow(2, i)) + conversionbinnum(ResteI(A), ++i));		/* Calcul de la valeur en decimale selon */
-																																										/* la position du bit grace au compteur i */
+																																													/* la position du bit grace au compteur i */
     }
 }
 
@@ -78,3 +77,22 @@ int conversionbinnum (ListeBit A, int i){ //Initialiser i a 0 pour utiliser
 float QualiteI (ListeBit A){
     return (-pow( ( (conversionbinnum (A, 0) /pow(2, 3) ) *(2) -1), 2));
 }
+
+void PrintListQualite(ListeBit A)
+{
+	ListeBit I;
+	if (A==NULL) {
+		printf("Liste vide\n");
+	}
+	else{
+		I=A;
+		while (I!=NULL) {
+			printf("%d", I->valeur);
+			I=I->suivant;
+		}
+	}
+	printf("  %f", QualiteI(A));
+}
+
+
+

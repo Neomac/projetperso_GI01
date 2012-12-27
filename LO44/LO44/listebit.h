@@ -66,7 +66,7 @@ ListeBit Ajouter_Queue_Indiv (ListeBit A, int v){
     newel = (ListeBit) malloc(sizeof(Bit));
     newel->valeur = v;
     newel->suivant = NULL;
-    if (VideI(A)==1){      // 1 a la place de 0
+    if (VideI(A)){      // 1 a la place de 0
         A=newel;
     }
     else{
@@ -80,18 +80,18 @@ ListeBit Ajouter_Queue_Indiv (ListeBit A, int v){
 }
 
 void PrintList(ListeBit A){
-    ListeBit I;
-    if (A==NULL) {
-        printf("Liste vide\n");
-    }
-    else{
-        I=A;
-        while (I!=NULL) {
-            printf("%d", I->valeur);
-            I=I->suivant;
-        }
-    }
-    
+	ListeBit I;
+	if (A==NULL) {
+		printf("Liste vide\n");
+	}
+	else{
+		I=A;
+		while (I!=NULL) {
+			printf("%d", I->valeur);
+			I=I->suivant;
+		}
+	}
+	
 }
 
 
