@@ -78,19 +78,10 @@ float QualiteI (ListeBit A){
     return (-pow( ( (conversionbinnum (A, 0) /pow(2, 3) ) *(2) -1), 2));
 }
 
+/* Imprime les valeurs d'une liste de bits en ligne et sa qualite*/
 void PrintListQualite(ListeBit A)
 {
-	ListeBit I;
-	if (A==NULL) {
-		printf("Liste vide\n");
-	}
-	else{
-		I=A;
-		while (I!=NULL) {
-			printf("%d", I->valeur);
-			I=I->suivant;
-		}
-	}
+	PrintList(A);
 	printf("  %f", QualiteI(A));
 }
 

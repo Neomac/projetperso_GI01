@@ -38,7 +38,7 @@ typedef Bit * ListeBit;
 /*       Operateurs ListeBit       */
 /***********************************/
 
-/* Créé une liste de bits vide */
+/* Cree une liste de bits vide */
 ListeBit CreerI (){
 	ListeBit A = NULL;
 	return(A);
@@ -58,7 +58,7 @@ int VideI (ListeBit A){
 /* Renvoie le bit de tete d'une liste de bits*/
 /* Si la liste est vide on renvoie 0 */
 int Valeur_Tete_Indiv (ListeBit A){
-	if (A==NULL){
+	if (VideI(A)){
 		return 0;
 	}
 	else{
@@ -87,7 +87,7 @@ ListeBit Ajouter_Queue_Indiv (ListeBit A, int v){
 	}
 	else{ /* Sinon on parcourt la liste jusqu'a etre a la fin ou on le rajoute */
 		p=A;
-		while(p->suivant!=NULL){
+		while(VideI(ResteI(p))==0){
 			p=ResteI(p);
 		}
 		p->suivant = newel;
