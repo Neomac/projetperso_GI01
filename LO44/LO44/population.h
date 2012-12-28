@@ -86,6 +86,7 @@ void PrintPopQualite(Population A)
 	else{ /* Sinon on parcourt la liste en imprimant les valeurs et les qualites des individus au fur et a mesure */
 		while (VideP(A)==0){
 			PrintListQualite(A->Indiv);
+			printf("\n");
 			A = ResteP(A);
 		}
 	}

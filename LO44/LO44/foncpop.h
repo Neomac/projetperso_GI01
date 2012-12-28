@@ -126,9 +126,13 @@ Population SelectP(Population p, int tSelect, int TaillePop)
 	tamp->suivant=NULL; /* Troncature de la liste */
 	
 	/* Recopie des 'tSelect' premiers individus autant de fois que necessaire pour remplir la population */
-	for(i=1; i<=(TaillePop/tSelect); ++i){
-		RecopierP(tamp, p, (tSelect));
+	for(i=1; i<(TaillePop/tSelect); ++i){
+		RecopierP(tamp, p, tSelect);
 	}
+	
+	/* Dernier appel a la fonction RecopierP au cas ou 'tSelect' ne soit pas un multiple de 'TaillePop' */
+	/* et ainsi finir de remplir p*/
+	RecopierP(tamp, p, (TaillePop-i*tSelect));
 	
 	/* Renvoie de la liste */
 	return p;

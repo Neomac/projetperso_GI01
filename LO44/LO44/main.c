@@ -21,20 +21,20 @@ int main ()
 	Population p1=CreerP(), p2=CreerP();
 	int i;
 	
-	p1=InitPopIter(p1, 6, 4, 50);
+	p1=InitPopIter(p1, 200, 8, 50);
 	/*Parametres: population, nombre d'individus, longueur individus et probabilite d'avoir des 1*/
 	printf("\nPopulation 1:\n");
 	PrintPopQualite(p1);
 	printf("\n");
 	
-	p2=CroiserP(p1, 6, 50);printf("\n");
-	/*Parametres: population, longueur individus et probabilite de croiser les bits*/
+	p2=CroiserP(p1, 200, 50);printf("\n");
+	/*Parametres: population, nombre individus et probabilite de croiser les bits*/
 	printf("Population 2: croisement de p1\n");
 	PrintPopQualite(p2);
 	printf("\n");
 	
-	p2=SelectP(p2, 4, 6);
-	/*Parametres: population, nombre d'individus, longueur individus*/
+	p2=SelectP(p2, 90, 200);
+	/*Parametres: population, nombre d'individus, nombre individus*/
 	printf("Population 2: selection des 4 premiers individus\n");
 	PrintPopQualite(p2);
 	printf("\n");
