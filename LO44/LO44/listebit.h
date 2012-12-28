@@ -27,8 +27,8 @@
 /***********************************/
 
 typedef struct elem{
-    int valeur;
-    struct elem * suivant;
+	int valeur;
+	struct elem * suivant;
 }Bit;
 
 typedef Bit * ListeBit;
@@ -38,60 +38,76 @@ typedef Bit * ListeBit;
 /*       Operateurs ListeBit       */
 /***********************************/
 
+/* Créé une liste de bits vide */
 ListeBit CreerI (){
-    ListeBit A = NULL;
-    return(A);
+	ListeBit A = NULL;
+	return(A);
 }
 
+/* Test si une liste de bits est vide ou non */
+/* Si la liste est vide on renvoie 1 sinon 0 */
 int VideI (ListeBit A){
-    if (A==NULL)
-        return 1;
-    else
-        return 0;
-}
-
-int Valeur_Tete_Indiv (ListeBit A){
-    if (A==NULL)
-        return 0;
-    else
-        return A->valeur;
-}
-
-ListeBit ResteI (ListeBit A){
-    return(A->suivant);
-}
-
-ListeBit Ajouter_Queue_Indiv (ListeBit A, int v){
-    ListeBit newel, p;
-    newel = (ListeBit) malloc(sizeof(Bit));
-    newel->valeur = v;
-    newel->suivant = NULL;
-    if (VideI(A)){      // 1 a la place de 0
-        A=newel;
-    }
-    else{
-        p=A;
-        while(p->suivant!=NULL){
-            p=p->suivant;
-        }
-        p->suivant = newel;
-    }
-    return A;
-}
-
-void PrintList(ListeBit A){
-	ListeBit I;
-	if (A==NULL) {
-		printf("Liste vide\n");
+	if (A==NULL){
+		return 1;
 	}
 	else{
+		return 0;
+	}
+}
+
+/* Renvoie le bit de tete d'une liste de bits*/
+/* Si la liste est vide on renvoie 0 */
+int Valeur_Tete_Indiv (ListeBit A){
+	if (A==NULL){
+		return 0;
+	}
+	else{
+		return A->valeur;
+	}
+}
+
+/* Renvoie au bit suivant d'une liste de bits */
+ListeBit ResteI (ListeBit A){
+	return(A->suivant);
+}
+
+/* Ajoute a une liste de bits un bit supplementaire en fin de liste */
+/* ListeBit A: liste de bits a laquelle rajouter le bit; int v: valeur du bit a rajouter */
+ListeBit Ajouter_Queue_Indiv (ListeBit A, int v){
+	
+	ListeBit newel, p;
+	
+	/* Creation et allocation memoire du nouveau bit selon les parametres */
+	newel = (ListeBit) malloc(sizeof(Bit));
+	newel->valeur = v;
+	newel->suivant = NULL;	/* Le bit etant en fin de liste on le marque comme tel */
+	
+	if (VideI(A)){ /* Si la liste est vide alors assigne le pointeur au nouveau bit */
+		A=newel;
+	}
+	else{ /* Sinon on parcourt la liste jusqu'a etre a la fin ou on le rajoute */
+		p=A;
+		while(p->suivant!=NULL){
+			p=ResteI(p);
+		}
+		p->suivant = newel;
+	}
+	return A;
+}
+
+/* Imprime les valeurs d'une liste de bits en ligne */
+void PrintList(ListeBit A){
+	ListeBit I;
+	if (VideI(A)) { /* Si la liste est vide on l'indique */
+		printf("Liste vide\n");
+	}
+	else{ /* Sinon on parcourt la liste en imprimant les valeurs des bits au fur et a mesure */
 		I=A;
-		while (I!=NULL) {
+		while (VideI(I)==0) { 
 			printf("%d", I->valeur);
-			I=I->suivant;
+			I=ResteI(I);
 		}
 	}
-	
 }
 
 
