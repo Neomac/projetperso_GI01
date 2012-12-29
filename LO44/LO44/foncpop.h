@@ -115,6 +115,8 @@ void RecopierP(Population p2, Population p1, int nbindiv)
 /* Tronque et recopie en fin de liste les 'tSelect' premiers individus d'une liste d'individus de taille 'TaillePop'*/
 Population SelectP(Population p, int tSelect, int TaillePop)
 {
+	tSelect=(taillePop*tSelect)/100; /* Passage de tSelect d'un pourcentage a un entier relatif a taillePop */
+	
 	Population tamp=p; /* Initialisation d'un pointeur de parcourt */
 	int i=1;
 	

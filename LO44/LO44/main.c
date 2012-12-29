@@ -17,27 +17,54 @@ int main ()
 	printf("\n\nSalut tout le monde !!!!!!!\n");
 	printf("Top est trop fort !!!\n\n");
 	
+	int LongIndiv, pCroise, taillePop, tSelect, nGen, cGen;
 	
-	Population p1=CreerP(), p2=CreerP();
-	int i;
+	printf("\n\n**********************************************************\n");
+	printf("\n\n Projet d'algorithmique et programmation\n");
+	printf("\nLO44-Automne 2012\n");
+	printf("\n\n**********************************************************\n\n");
 	
-	p1=InitPopIter(p1, 200, 8, 50);
+	printf("\nVeuillez rentrer le nombre de bits de chaque individus:\n");
+	scanf("%d", &LongIndiv);
+	
+	printf("\n\nVeuillez rentrer la probabilite que ces bits soient des 1:\n");
+	scanf("%d", &pCroise);
+	
+	printf("\n\nVeuillez rentrer la taille de la population:\n(entre 20 et 200 individus)\n");
+	scanf("%d", &taillePop);
+	
+	printf("\n\nVeuillez rentrer le taux de selection a chaque generation en pourcentage:\n(entre 10%% et 90%%)\n");
+	scanf("%d", &tSelect);
+	tSelect=(taillePop*tSelect)/100;
+	
+	printf("\n\nVeuillez rentrer le nombre de generations\n");
+	scanf("%d", &nGen);
+	
+	Population p=CreerP();
+	
+	p=InitPopIter(p, taillePop, LongIndiv, pCroise);
 	/*Parametres: population, nombre d'individus, longueur individus et probabilite d'avoir des 1*/
-	printf("\nPopulation 1:\n");
-	PrintPopQualite(p1);
-	printf("\n");
+	printf("\nPopulation initiale:\n\n");
+	PrintPopQualite(p);
+	printf("\n");	
 	
-	p2=CroiserP(p1, 200, 50);printf("\n");
-	/*Parametres: population, nombre individus et probabilite de croiser les bits*/
-	printf("Population 2: croisement de p1\n");
-	PrintPopQualite(p2);
-	printf("\n");
+	for (cGen=1; cGen<=nGen; ++cGen){
+		p=CroiserP(p, taillePop, pCroise);
+		/* Parametres: population, nombre individus et probabilite de croiser les bits */
+		
+		/* Il manque encore l'etape de tri */
+		
+		p=SelectP(p, tSelect, taillePop);
+		/* Parametres: population, taux de selection, nombre individus */
+	}
 	
-	p2=SelectP(p2, 90, 200);
-	/*Parametres: population, nombre d'individus, nombre individus*/
-	printf("Population 2: selection des 4 premiers individus\n");
-	PrintPopQualite(p2);
-	printf("\n");
+	printf("\nPopulation finale:\n\n");
+	PrintPopQualite(p);
+	printf("\n\n");
+	
+	printf("Meilleur individu de la population: \n");
+	PrintListQualite(p->Indiv);
+	printf("\n\n");
 	
 	
 	/*ListeBit Test = NULL;
