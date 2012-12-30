@@ -78,15 +78,15 @@ void PrintPop(Population A)
 }
 
 /* Imprime les valeurs des individus et leur qualite d'une liste d'individus en colonne */
-void PrintPopQualite(Population A)
+void PrintPopQualite(Population A, int LongIndiv)
 {
 	if(VideP(A)){ /* Si la liste est vide on l'indique */
 		printf("Population vide\n");
 	}
 	else{ /* Sinon on parcourt la liste en imprimant les valeurs et les qualites des individus au fur et a mesure */
 		while (VideP(A)==0){
-			PrintListQualite(A->Indiv);
-			printf("\n");
+			PrintList(A->Indiv);
+			printf("  %f\n", A->qualite);
 			A = ResteP(A);
 		}
 	}
@@ -94,14 +94,14 @@ void PrintPopQualite(Population A)
 
 /* Ajoute a une liste d'individus un individu supplementaire en fin de liste */
 /* Population A: liste d'individus a laquelle rajouter l'individu; ListeBit indiv: individu a rajouter */
-Population ajouter_queue_pop (Population A, ListeBit indiv)
+Population ajouter_queue_pop (Population A, ListeBit indiv, int LongIndiv)
 {
 	Population newel, p;
 	
 	/* Creation et allocation memoire du nouvel individu selon les parametres */
 	newel = (Population) malloc(sizeof(element));
 	newel->Indiv = indiv;
-	newel->qualite=QualiteI(indiv); /* Calcul de la qualite de l'individu */
+	newel->qualite=QualiteI(indiv, LongIndiv); /* Calcul de la qualite de l'individu */
 	newel->suivant = NULL;/* Le bit etant en fin de liste on le marque comme tel */
 	
 	

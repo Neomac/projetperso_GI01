@@ -74,16 +74,34 @@ float conversionbinnum (ListeBit A, int i){ //Initialiser i a 0 pour utiliser
 }
 
 /* Calcule la qualite d'une liste de bits 'A' a partir de sa valeur en base decimale selon la fonction reelle f1 */
-float QualiteI (ListeBit A){
-    return (-pow( ( (conversionbinnum (A, 0) /pow(2, 3) ) *(2) -1), 2));
+float QualiteI (ListeBit liste, int LongIndiv)
+{
+	float X, B, A;
+	
+	if (LongIndiv==8){
+		A=-1;
+		B=1;
+		X=((conversionbinnum(liste,0)/pow(2,LongIndiv))*(B-A)+A);
+		return (-pow(X,2));
+	}
+	else if (LongIndiv==16){
+		A=0.1;
+		B=5;
+		X=((conversionbinnum(liste,0)/pow(2,LongIndiv))*(B-A)+A);
+		return (-log(X));
+	}
+	else{
+		A=-3.1416;
+		B=3.1416;
+		X=((conversionbinnum(liste,0)/pow(2,LongIndiv))*(B-A)+A);
+		return (-cos(X));
+	}
 }
 
-/* Imprime les valeurs d'une liste de bits en ligne et sa qualite*/
-void PrintListQualite(ListeBit A)
+/* Imprime les valeurs d'une liste de bits en ligne et sa qualite, fonction inutilisee */
+void PrintListQualite(ListeBit A, int LongIndiv)
 {
 	PrintList(A);
-	printf("  %f", QualiteI(A));
+	printf("  %f", QualiteI(A, LongIndiv));
 }
-
-
 

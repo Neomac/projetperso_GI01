@@ -6,29 +6,29 @@
 
 /* Cree et remplie une liste d'individus */
 /* p: population a remplir; TaillePop: nombre d'individus souhaites dans la population; */
-/* TailleIndiv: nombre de bits de chaque individu; prob: probabilite d'avoir des bits de valeur egale a 1 */
+/* LongIndiv: nombre de bits de chaque individu; prob: probabilite d'avoir des bits de valeur egale a 1 */
 /* Algorithme recursif */
-Population InitPopRecur(Population p, int TaillePop, int TailleIndiv, int prob)
+Population InitPopRecur(Population p, int TaillePop, int LongIndiv, int prob)
 {
 	if(TaillePop == 0){	/* TaillePop sert egalement de compteur pour savoir combien d'individus il reste a ajouter */
 		return p=NULL;		/* Une fois tous les individus ajoutes on marque la fin de la liste */
 	}
 	else{	/* Sinon on ajoute en fin de liste un individu cree aleatoirement */
-	return (ajouter_queue_pop(InitPopRecur( p, --TaillePop, TailleIndiv, prob), InitialiserIndivRecursif( TailleIndiv, prob)));
+	return (ajouter_queue_pop(InitPopRecur( p, --TaillePop, LongIndiv, prob), InitialiserIndivRecursif(LongIndiv, prob), LongIndiv));
 	}
 }
 
 /* Cree et remplie une liste d'individus */
 /* p: population a remplir; TaillePop: nombre d'individus souhaites dans la population; */
-/* TailleIndiv: nombre de bits de chaque individu; prob: probabilite d'avoir des bits de valeur egale a 1 */
+/* LongIndiv: nombre de bits de chaque individu; prob: probabilite d'avoir des bits de valeur egale a 1 */
 /* Algorithme iteratif */
-Population InitPopIter(Population p, int TaillePop, int TailleIndiv, int prob)
+Population InitPopIter(Population p, int TaillePop, int LongIndiv, int prob)
 {
 	int i, j;
 	p=CreerP();
 	for(i=0; i< TaillePop; ++i){ /* TaillePop sert egalement de compteur pour savoir combien d'individus il reste a ajouter */
 		/* On ajoute en fin de liste un individu cree aleatoirement */
-		p=ajouter_queue_pop(p, InitialiserIndivRecursif( TailleIndiv, prob));
+		p=ajouter_queue_pop(p, InitialiserIndivRecursif( LongIndiv, prob), LongIndiv);
 	}
 	return p;
 }
@@ -53,18 +53,18 @@ ListeBit PickIP(Population p, int TaillePop)
 }
 
 /* Calcule les qualites de tous les individus d'une population */
-void QualiteP(Population P)
+void QualiteP(Population P, int LongIndiv)
 {
 	Population p=P;
 	
 	while (VideP(p)==0){ /* On parcourt la liste et calcul la qualite de chaque individu au fur et a mesure */
-		p->qualite=QualiteI(p->Indiv);
+		p->qualite=QualiteI(p->Indiv, LongIndiv);
 		p=ResteP(p);
 	}
 }
 
 /* Recopie et croisment d'individus d'une population 'p1' pour creer une nouvelle population p2 */
-Population CroiserP(Population p1, int TaillePop, int pCroise)
+Population CroiserP(Population p1, int TaillePop, int pCroise, int LongIndiv)
 {
 	int i=1;
 	
@@ -75,8 +75,8 @@ Population CroiserP(Population p1, int TaillePop, int pCroise)
 	while (i<=TaillePop){
 		
 		/* Choix aleatoire de 2 individus de 'p1' et leur recopie a la fin 'p2' */
-		p2=ajouter_queue_pop (p2, PickIP(p1, TaillePop));
-		p2=ajouter_queue_pop (p2, PickIP(p1, TaillePop));
+		p2=ajouter_queue_pop (p2, PickIP(p1, TaillePop), LongIndiv);
+		p2=ajouter_queue_pop (p2, PickIP(p1, TaillePop), LongIndiv);
 		
 		/* Parcourt de p2 avec 'tamp1' et 'tamp2' pour recuperer les 2 individus ajoutes */
 		tamp1=p2;
@@ -94,7 +94,7 @@ Population CroiserP(Population p1, int TaillePop, int pCroise)
 	
 	/* Recalcul des qualites des individus de 'p2' car elles sont initialement calculees lorsque les individus */
 	/* sont ajoutes a 'p2', or les croiser apres modifie leur qualite */
-	QualiteP(p2);
+	QualiteP(p2, LongIndiv);
 	
 	/* Renvoie de 'p2' */
 	return p2;
@@ -102,18 +102,18 @@ Population CroiserP(Population p1, int TaillePop, int pCroise)
 
 /* Recopie un nombre 'nbindiv' d'individus de la liste d'individus 'p1' dans a la fin de celle 'p2' */
 /* Algorithme recursif */
-void RecopierP(Population p2, Population p1, int nbindiv)
+void RecopierP(Population p2, Population p1, int nbindiv, int LongIndiv)
 {
 	if (nbindiv==0){ /* Il n'y a plus d'individus a recopier, le sous-programme s'arrete */
 	}
 	else{
-		p2=ajouter_queue_pop(p2, p1->Indiv);	/* Recopie de l'individu de tete de 'p1' a la fin de 'p2'*/
-		RecopierP(p2, ResteP(p1), --nbindiv);	/* Appel recursif de la sous-fonction avec l'individu suivant de 'p1' et 1 individu de moins a recopier */
+		p2=ajouter_queue_pop(p2, p1->Indiv, LongIndiv);	/* Recopie de l'individu de tete de 'p1' a la fin de 'p2'*/
+		RecopierP(p2, ResteP(p1), --nbindiv, LongIndiv);	/* Appel recursif de la sous-fonction avec l'individu suivant de 'p1' et 1 individu de moins a recopier */
 	}
 }
 
 /* Tronque et recopie en fin de liste les 'tSelect' premiers individus d'une liste d'individus de taille 'TaillePop'*/
-Population SelectP(Population p, int tSelect, int TaillePop)
+Population SelectP(Population p, int tSelect, int taillePop, int LongIndiv)
 {
 	tSelect=(taillePop*tSelect)/100; /* Passage de tSelect d'un pourcentage a un entier relatif a taillePop */
 	
@@ -128,41 +128,15 @@ Population SelectP(Population p, int tSelect, int TaillePop)
 	tamp->suivant=NULL; /* Troncature de la liste */
 	
 	/* Recopie des 'tSelect' premiers individus autant de fois que necessaire pour remplir la population */
-	for(i=1; i<(TaillePop/tSelect); ++i){
-		RecopierP(tamp, p, tSelect);
+	for(i=1; i<(taillePop/tSelect); ++i){
+		RecopierP(tamp, p, tSelect, LongIndiv);
 	}
 	
 	/* Dernier appel a la fonction RecopierP au cas ou 'tSelect' ne soit pas un multiple de 'TaillePop' */
 	/* et ainsi finir de remplir p*/
-	RecopierP(tamp, p, (TaillePop-i*tSelect));
+	RecopierP(tamp, p, (taillePop-i*tSelect), LongIndiv);
 	
 	/* Renvoie de la liste */
 	return p;
 }
 
-
-// Premiere version de CroiserP, a conserver comme reference pour resoudre le probleme de
-// croisement avec soi-meme
-/*Population CroiserP(Population p1, int TaillePop, int pCroise)
-{
-	int i=1;
-	Population p2=CreerP(), tampon=CreerP();
-	ListeBit l1=CreerI(), l2=CreerI();
-	
-	while (i<=(TaillePop/2)){
-		l1=PickIP(p1, TaillePop);
-		PrintListQualite(l1);printf("\n");
-		l2=PickIP(p1, TaillePop);
-		while(l1==l2){
-			l2=PickIP(p1, TaillePop);
-		}
-		PrintListQualite(l2);printf("\n");
-		CroiseI(l1, l2, pCroise);
-		printf("->");PrintListQualite(l1);printf("\n");
-		printf("->");PrintListQualite(l2);printf("\n");printf("\n");
-		p2=ajouter_queue_pop (p2, l1);
-		p2=ajouter_queue_pop (p2, l2);
-		++i;
-	}
-	return p2;
-}*/
