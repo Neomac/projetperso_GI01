@@ -4,7 +4,7 @@
 
 void main(int argc, char *argv[])
 {
-	float b,i, rem, n=0;
+	float b,i = 0.0, rem, n=0;
 	int a;
 	a=atof(argv[1]);
 	

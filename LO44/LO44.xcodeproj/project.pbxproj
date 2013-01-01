@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6014D0811679CF9F00AD92D4 /* random1.h in Sources */ = {isa = PBXBuildFile; fileRef = 6014D0801679CF9F00AD92D4 /* random1.h */; };
 		6014D0861679D3FE00AD92D4 /* listebit.h in Sources */ = {isa = PBXBuildFile; fileRef = 6014D0851679D3FE00AD92D4 /* listebit.h */; };
+		602A17AD1693947600BBD254 /* qualite.c in Sources */ = {isa = PBXBuildFile; fileRef = 602A17AC1693947600BBD254 /* qualite.c */; };
 		6030CA9F167946480042FCE4 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6030CA9E167946480042FCE4 /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -27,11 +28,13 @@
 /* Begin PBXFileReference section */
 		6014D0801679CF9F00AD92D4 /* random1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = random1.h; path = LO44/random1.h; sourceTree = "<group>"; };
 		6014D0851679D3FE00AD92D4 /* listebit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = listebit.h; path = LO44/listebit.h; sourceTree = "<group>"; };
-		6030CA9A167946470042FCE4 /* LO44 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LO44; sourceTree = BUILT_PRODUCTS_DIR; };
+		602A17AA1693947600BBD254 /* individu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = individu.h; path = LO44/individu.h; sourceTree = "<group>"; };
+		602A17AB1693947600BBD254 /* population.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = population.h; path = LO44/population.h; sourceTree = "<group>"; };
+		602A17AC1693947600BBD254 /* qualite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = qualite.c; path = LO44/qualite.c; sourceTree = "<group>"; };
+		602A17AF169394E000BBD254 /* foncpop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = foncpop.h; path = LO44/foncpop.h; sourceTree = "<group>"; };
+		6030CA9A167946470042FCE4 /* LO44 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = LO44; path = "/Users/HP-Touchpad/projetperso_GI01/LO44/build/Release/LO44"; sourceTree = "<absolute>"; };
 		6030CA9E167946480042FCE4 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = LO44/main.c; sourceTree = "<group>"; };
-		606A0A37167B95A300B806E0 /* LO44 Projet To do List.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "LO44 Projet To do List.rtf"; path = "../LO44 Projet To do List.rtf"; sourceTree = "<group>"; };
 		606A0A38167B95A300B806E0 /* Projet LO44 Structure programme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "Projet LO44 Structure programme.rtf"; path = "../Projet LO44 Structure programme.rtf"; sourceTree = "<group>"; };
-		60C2E6F51680C5BB0061DC96 /* population.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = population.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,22 +51,15 @@
 		6030CA8F167946470042FCE4 = {
 			isa = PBXGroup;
 			children = (
-				606A0A37167B95A300B806E0 /* LO44 Projet To do List.rtf */,
-				60C2E6F51680C5BB0061DC96 /* population.h */,
+				602A17AF169394E000BBD254 /* foncpop.h */,
 				606A0A38167B95A300B806E0 /* Projet LO44 Structure programme.rtf */,
 				6014D0851679D3FE00AD92D4 /* listebit.h */,
 				6014D0801679CF9F00AD92D4 /* random1.h */,
 				6030CA9E167946480042FCE4 /* main.c */,
-				6030CA9B167946470042FCE4 /* Products */,
+				602A17AA1693947600BBD254 /* individu.h */,
+				602A17AB1693947600BBD254 /* population.h */,
+				602A17AC1693947600BBD254 /* qualite.c */,
 			);
-			sourceTree = "<group>";
-		};
-		6030CA9B167946470042FCE4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6030CA9A167946470042FCE4 /* LO44 */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,7 +99,7 @@
 				en,
 			);
 			mainGroup = 6030CA8F167946470042FCE4;
-			productRefGroup = 6030CA9B167946470042FCE4 /* Products */;
+			productRefGroup = 6030CA8F167946470042FCE4;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -120,6 +116,7 @@
 				6030CA9F167946480042FCE4 /* main.c in Sources */,
 				6014D0811679CF9F00AD92D4 /* random1.h in Sources */,
 				6014D0861679D3FE00AD92D4 /* listebit.h in Sources */,
+				602A17AD1693947600BBD254 /* qualite.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

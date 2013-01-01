@@ -24,7 +24,7 @@ Population InitPopRecur(Population p, int TaillePop, int LongIndiv, int prob)
 /* Algorithme iteratif */
 Population InitPopIter(Population p, int TaillePop, int LongIndiv, int prob)
 {
-	int i, j;
+	int i;
 	p=CreerP();
 	for(i=0; i< TaillePop; ++i){ /* TaillePop sert egalement de compteur pour savoir combien d'individus il reste a ajouter */
 		/* On ajoute en fin de liste un individu cree aleatoirement */
@@ -36,7 +36,7 @@ Population InitPopIter(Population p, int TaillePop, int LongIndiv, int prob)
 /* Renvoie un entier choisie aleatoirement entre 1 et l'entier max */
 int RandomN(int max)
 {
-	srand(time(NULL) + rand());	//Initialise aléatoirement la fonction rand()
+	srand(time(NULL) + rand());	//Initialise alŽatoirement la fonction rand()
 	return (rand() % max+1);	//Tire aleatoirement un entier entre 1 et max
 }
 
