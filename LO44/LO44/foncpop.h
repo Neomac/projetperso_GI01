@@ -162,13 +162,14 @@ int nb_element_population (Population A){
 
 //Le QuickSort, c'est une version d'ebauche pour l'instant, il est tard mais faut que je test l'algo papier
 Population quicksort(Population A){
-    if (A==NULL) {
+    // Cas trivial
+    if (A==NULL) { //Cas ou la liste est vide
         return A;
     }
-    else if (nb_element_population(A)==1){
+    else if (nb_element_population(A)==1){  //Cas ou la liste ne contient que 1 element, elle est deja triŽe
         return A;
     }
-    else if (nb_element_population(A)==2){
+    else if (nb_element_population(A)==2){  //Cas d'arret de l'appel recurcif, on a 2 elements, il faut les trier a la main
         Population S1, S2;
         S1=CreerP();
         S2=CreerP();
@@ -181,6 +182,7 @@ Population quicksort(Population A){
             S2 = ajouter_queue_pop(S2, A->suivant->Indiv, A->suivant->qualite);  //Inverse du dessus
         }
     }
+    //Cas general
     else
         return (coller_liste(quicksort(S1), quicksort(S2)))
 }
