@@ -140,3 +140,47 @@ Population SelectP(Population p, int tSelect, int taillePop, int LongIndiv)
 	return p;
 }
 
+//On colle deux liste l'une aprŽs l'autre, l'odre dans l'appel de la fonction compte.
+Population coller_liste(Population A, Population B){
+    Population temp=A;
+    while (temp->suivant!=NULL) {  //Parcour de la liste
+        temp = temp->suivant;
+    }
+    temp->suivant=B;   //Collage
+    return A;
+}
+
+//Compteur du nombre d'element dans une population
+int nb_element_population (Population A){
+    int nb = 0;
+    while (A->suivant!=NULL) {
+        A=A->suivant;
+        nb++;
+    }
+    return nb;
+}
+
+//Le QuickSort, c'est une version d'ebauche pour l'instant, il est tard mais faut que je test l'algo papier
+Population quicksort(Population A){
+    if (A==NULL) {
+        return A;
+    }
+    else if (nb_element_population(A)==1){
+        return A;
+    }
+    else if (nb_element_population(A)==2){
+        Population S1, S2;
+        S1=CreerP();
+        S2=CreerP();
+        if (A->qualite > A->suivant->qualite) {
+            S1 = ajouter_queue_pop(S1, A->suivant->Indiv, A->suivant->qualite); //CrŽation de la sous liste S1 avec le plus petit element de A (ici 2eme element)
+            S2 = ajouter_queue_pop(S2, A->Indiv, A->qualite);  //Creation de la sous liste S2 avec le plus grand element de A (ici 1er element)
+        }
+        else{
+            S1 = ajouter_queue_pop(S1, A->Indiv, A->qualite);  //Inverse du dessus
+            S2 = ajouter_queue_pop(S2, A->suivant->Indiv, A->suivant->qualite);  //Inverse du dessus
+        }
+    }
+    else
+        return (coller_liste(quicksort(S1), quicksort(S2)))
+}

@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include"math.h"
 
-void main(int argc, char *argv[])
+void qualite(int argc, char *argv[])
 {
 	float b,i = 0.0, rem, n=0;
 	int a;

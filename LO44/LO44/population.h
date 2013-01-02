@@ -18,7 +18,7 @@
 
 typedef struct elemp{
     ListeBit Indiv;
-		float qualite;
+    float qualite;
     struct elemp * suivant;
 }element;
 
