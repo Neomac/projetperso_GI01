@@ -152,13 +152,12 @@ Population coller_liste(Population A, Population B){
 
 Population QuicksortP(Population A, int LongIndiv)
 {
-	Population P;
-	P=CreerP();
 	if (VideP(A) || VideP(ResteP(A))){ /* Cas ou il ne reste qu'un seul element dans la liste, elle est donc "triee" */
 		return A;
 	}
 	else{
-		Population P1, P2;
+		Population P, P1, P2;
+		P=CreerP();
 		P1=CreerP();
 		P2=CreerP();
 		P=ajouter_queue_pop(P, A->Indiv, LongIndiv);
@@ -175,14 +174,15 @@ Population QuicksortP(Population A, int LongIndiv)
 			}
 			A=ResteP(A);
 		}
+		
 		if (VideP(P1)==0){			/* Si P1 n'est pas vide on colle P1 et P */
 			P=coller_liste(QuicksortP(P1, LongIndiv), P);
 		}
 		if(VideP(P2)==0){			/* Si P2 n'est pas vide on colle P2 et P */
 			P=coller_liste(P, QuicksortP(P2, LongIndiv));
 		}
+		return P;
 	}
-	return P;
 }
 
 
