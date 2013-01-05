@@ -1,0 +1,75 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww9160\viewh10800\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 Algo r\'e9cursif quicksort:
+\b0 \
+\
+Parametrage: quicksort: population A -> population\
+\
+
+\b Cas trivial:
+\b0 \
+\
+Si vide(A) Alors\
+	quicksort=A\
+Fin si\
+\
+
+\b Cas g\'e9n\'e9ral:
+\b0 \
+\
+Creer(S1)\
+Creer(S2)\
+Creer(P)\
+quicksort <- \'e9l\'e9ment_t\'eate(A))\
+A <- Reste(A)\
+\
+Tant que non_vide(A) Faire\
+	Si qualite(\'e9l\'e9ment_t\'eate((quicksort))) < qualite(\'e9l\'e9ment_t\'eate(A))) Faire\
+		S1 <- ajouter_queue(element_tete(A))\
+	Sinon\
+		S2 <- ajouter_queue(element_tete(A))\
+	Fin Si\
+	A <- Reste(A)\
+Fait\
+\
+Si non_vide (S1) Alors\
+	quicksort <- coller_liste(quicksort(S1), quicksort)\
+Fin Si\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 Si non_vide (S2) Alors\
+	quicksort <- coller_liste(quicksort, quicksort(S2))\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 Fin Si\
+\
+
+\b Algorithme:
+\b0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 Si vide(A) Alors\
+	quicksort=A\
+Sinon\
+	Creer(S1)\
+	Creer(S2)\
+	quicksort <- \'e9l\'e9ment_t\'eate(A))\
+	A <- Reste(A)\
+\
+	Tant que non_vide(A) Faire\
+		Si qualite(\'e9l\'e9ment_t\'eate((quicksort))) < qualite(\'e9l\'e9ment_t\'eate(A))) Faire\
+			S1 <- ajouter_queue(element_tete(A))\
+		Sinon\
+			S2 <- ajouter_queue(element_tete(A))\
+		Fin Si\
+		A <- Reste(A)\
+	Fait\
+	Si non_vide (S1) Alors	\
+		quicksort <- coller_liste(quicksort(S1), quicksort)\
+	Fin Si\
+	Si non_vide (S2) Alors\
+		quicksort <- coller_liste(quicksort, quicksort(S2))\
+	Fin Si\
+Fin Si}
