@@ -36,7 +36,7 @@ Population InitPopIter(Population p, int TaillePop, int LongIndiv, int prob)
 /* Renvoie un entier choisie aleatoirement entre 1 et l'entier max */
 int RandomN(int max)
 {
-	srand(time(NULL) + rand());	//Initialise alŽatoirement la fonction rand()
+	srand(time(NULL) + rand());	//Initialise aleatoirement la fonction rand()
 	return (rand() % max+1);	//Tire aleatoirement un entier entre 1 et max
 }
 
@@ -140,7 +140,7 @@ Population SelectP(Population p, int tSelect, int taillePop, int LongIndiv)
 	return p;
 }
 
-//On colle deux liste l'une aprŽs l'autre, l'odre dans l'appel de la fonction compte.
+//On colle deux liste l'une apres l'autre, l'odre dans l'appel de la fonction compte.
 Population coller_liste(Population A, Population B){
     Population temp=A;
     while (temp->suivant!=NULL) {  //Parcour de la liste
@@ -150,6 +150,43 @@ Population coller_liste(Population A, Population B){
     return A;
 }
 
+Population QuicksortP(Population A, int LongIndiv)
+{
+	Population P;
+	P=CreerP();
+	if (VideP(A) || VideP(ResteP(A))){ /* Cas ou il ne reste qu'un seul element dans la liste, elle est donc "triee" */
+		return A;
+	}
+	else{
+		Population P1, P2;
+		P1=CreerP();
+		P2=CreerP();
+		P=ajouter_queue_pop(P, A->Indiv, LongIndiv);
+		/* On cree une population P a laquelle on ajoute la liste de tete de A 
+		qui servira de referentiel pour creer les deux sous-populations P1 et P2 */
+		A=ResteP(A);
+		
+		while (VideP(A)==0){
+			if (P->qualite < A->qualite){
+				P1=ajouter_queue_pop(P1, A->Indiv, LongIndiv);
+			}
+			else{
+				P2=ajouter_queue_pop(P2, A->Indiv, LongIndiv);
+			}
+			A=ResteP(A);
+		}
+		if (VideP(P1)==0){			/* Si P1 n'est pas vide on colle P1 et P */
+			P=coller_liste(QuicksortP(P1, LongIndiv), P);
+		}
+		if(VideP(P2)==0){			/* Si P2 n'est pas vide on colle P2 et P */
+			P=coller_liste(P, QuicksortP(P2, LongIndiv));
+		}
+	}
+	return P;
+}
+
+
+/* Quicksort d'Antoine
 //Compteur du nombre d'element dans une population
 int nb_element_population (Population A){
     int nb = 0;
@@ -166,7 +203,7 @@ Population quicksort(Population A){
     if (A==NULL) { //Cas ou la liste est vide
         return A;
     }
-    else if (nb_element_population(A)==1){  //Cas ou la liste ne contient que 1 element, elle est deja triŽe
+    else if (nb_element_population(A)==1){  //Cas ou la liste ne contient que 1 element, elle est deja triee
         return A;
     }
     else if (nb_element_population(A)==2){  //Cas d'arret de l'appel recurcif, on a 2 elements, il faut les trier a la main
@@ -174,7 +211,7 @@ Population quicksort(Population A){
         S1=CreerP();
         S2=CreerP();
         if (A->qualite > A->suivant->qualite) {
-            S1 = ajouter_queue_pop(S1, A->suivant->Indiv, A->suivant->qualite); //CrŽation de la sous liste S1 avec le plus petit element de A (ici 2eme element)
+            S1 = ajouter_queue_pop(S1, A->suivant->Indiv, A->suivant->qualite); //Creation de la sous liste S1 avec le plus petit element de A (ici 2eme element)
             S2 = ajouter_queue_pop(S2, A->Indiv, A->qualite);  //Creation de la sous liste S2 avec le plus grand element de A (ici 1er element)
         }
         else{
@@ -186,3 +223,4 @@ Population quicksort(Population A){
     else
         return (coller_liste(quicksort(S1), quicksort(S2)))
 }
+*/

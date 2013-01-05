@@ -49,12 +49,14 @@ int VideP (Population A)
 
 /* Renvoie la qualite de l'individu de tete d'une liste d'individus*/
 /* Si la liste est vide on renvoie 0 */
-int qualite_tete_pop (Population A)
+float qualite_tete_pop (Population A)
 {
-    if (VideP(A))
+    if (VideP(A)){
         return 0;
-    else
+		}
+    else{
         return A->qualite;
+		}
 }
 
 /* Renvoie a l'individu suivant d'une liste d'individus */

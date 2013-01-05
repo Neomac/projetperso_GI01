@@ -25,6 +25,7 @@ int main ()
 	
 	int LongIndiv, pCroise, taillePop, tSelect, nGen, cGen;
 	
+	
 	printf("\nVeuillez choisir le nombre de bits de chaque individus: 8, 16 ou 32?\n");
 	scanf("%d", &LongIndiv);
 	while (LongIndiv!=8 && LongIndiv!=16 &&LongIndiv!=32){
@@ -78,10 +79,12 @@ int main ()
 		p=CroiserP(p, taillePop, pCroise, LongIndiv);
 		/* Parametres: population, nombre individus et probabilite de croiser les bits */
 		
-		/* Il manque encore l'etape de tri */
+		p=QuicksortP(p, LongIndiv);
+		/* Parametres: population, nombre individus */
 		
 		p=SelectP(p, tSelect, taillePop, LongIndiv);
 		/* Parametres: population, taux de selection, nombre individus */
+		
 	}
 	
 	
