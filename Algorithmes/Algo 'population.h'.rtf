@@ -1,0 +1,107 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf510
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qj
+
+\f0\b\fs24 \cf0 \ul \ulc0 A
+\f1 lgorithmes population.h
+\b0 \ulnone \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qj
+
+\b \cf0 PrintPop:
+\b0 \
+\
+R\'e9sultat: imprime les valeurs des individus d'une liste d'individus en colonne\
+Index: A (population \'e0 imprimer)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qj
+\cf0 \ul \ulc0 Si\ulnone  Vide(A) \ul Alors\ulnone \
+	Imprimer("La population est vide")\
+\ul Sinon\ulnone \
+	\ul Tant que\ulnone  NonVide(A) \ul Faire\ulnone \
+		PrintList(A -> Indiv)\
+		A <- Reste(A)\
+	\ul Fait\ulnone \
+\ul Fin SI\ulnone \
+\
+
+\b PrintPopQualite:
+\b0 \
+\
+R\'e9sultat: Imprime les valeurs des individus et leur qualit\'e9 d'une liste d'individus en colonne\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qj
+\cf0 Index: A (population \'e0 imprimer)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qj
+\cf0 \ul \ulc0 Si\ulnone  Vide(A) \ul Alors\ulnone \
+	Imprimer("La population est vide")\
+\ul Sinon\ulnone \
+	\ul Tant que\ulnone  NonVide(A) \ul Faire\ulnone \
+		PrintList(A -> Indiv)\
+		Imprimer(A -> qualit\'e9)\
+		A <- Reste(A)\
+	\ul Fait\ulnone \
+\ul Fin SI\ulnone \
+\
+\
+
+\b Ajouter_Queue_Pop:
+\b0 \
+\
+R\'e9sultat: Ajoute a une population 'A' un individu supplementaire 'indiv' en fin de liste\
+Index: A (population \'e0 laquelle on va rajouter un individu), indiv (liste de bits que l'on va rajouter en queue de A), LongIndiv (entier donnant la longueur des individus utilis\'e9 pour calculer leur qualit\'e9)\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qj
+\cf0 newel <- CreerP()\
+newel -> Indiv <- indiv\
+newel -> qualite <- QualiteI(indiv, LongIndiv)\
+\
+\ul Si\ulnone  Vide(A) \ul Alors\ulnone \
+	A <- newel\
+\ul Sinon\ulnone \
+	p <- A\
+	\ul Tant que\ulnone  Vide(Reste(p)) \ul Faire\ulnone \
+		p <- Reste(p)\
+	\ul Fait\ulnone \
+	p -> suivant <- newel\
+\ul Fin Si\ulnone \
+\
+\
+
+\b DernierPop:
+\b0  Population P -> Population\
+\
+Algorithme r\'e9cursif\
+R\'e9sultat: Parcourt une liste d'individus et en renvoie le dernier\
+Index: P (population \'e0 parcourir)\
+\
+\ul Si\ulnone  VideP(P) \ul Ou\ulnone  VideP(ResteP(P)) \ul Alors\ulnone \
+	Retourner P\
+\ul Sinon\ulnone \
+	DernierPop <- DernierPop(ResteP(P))\
+	Retourner P\
+\ul Fin Si\ulnone \
+\
+\
+
+\b Avant_Dernier_Pop:
+\b0  Population P -> Population\
+\
+
+\b DernierPop:
+\b0  Population P -> Population\
+\
+Algorithme r\'e9cursif\
+R\'e9sultat: Parcourt une liste d'individus et en renvoie l'avant-dernier\
+Index: P (population \'e0 parcourir)\
+\
+\ul Si\ulnone  VideP(P) \ul Ou\ulnone  VideP(ResteP(P)) \ul Ou\ulnone  VideP(ResteP(ResteP(P))) \ul Alors\ulnone \
+	Retourner P\
+\ul Sinon\ulnone \
+	DernierPop <- DernierPop(ResteP(P))\
+	Retourner P\
+\ul Fin Si\ulnone \
+}
