@@ -1,12 +1,3 @@
-//
-//  main.c
-//  LO44
-//
-//  Created by Antoine Galluet on 12/12/12.
-//  Copyright (c) 2012 Antoine Galluet. All rights reserved.
-//
-
-
 #include "individu.h"
 #include "population.h"
 #include "foncpop.h"

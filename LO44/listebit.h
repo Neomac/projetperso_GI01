@@ -1,18 +1,3 @@
-//
-//  stcuture.h
-//  LO44
-//
-//  Created by Antoine Galluet on 11/12/12.
-//  Copyright (c) 2012 Antoine Galluet. All rights reserved.
-//
-//
-//  ListeBit.h
-//  LO44
-//
-//  Created by Antoine Galluet on 12/12/12.
-//  Copyright (c) 2012 Antoine Galluet. All rights reserved.
-//
-
 #ifndef LO44_ListeBit_h
 #define LO44_ListeBit_h
 
