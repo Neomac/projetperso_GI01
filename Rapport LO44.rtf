@@ -1,4 +1,4 @@
-{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fswiss\fcharset0 ArialMT;}{\f2\fnil\fcharset0 Arial;}}
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fswiss\fcharset0 ArialMT;}{\f2\fnil\fcharset0 Arial;}{\f3\fswiss\fcharset0 Helvetica;}}
 {\*\generator Riched20 6.2.9200}\viewkind4\uc1 
 \pard\qc\f0\fs22\lang1036 Rapport du projet LO44\par
 
@@ -215,7 +215,7 @@ Population temp = A\par
 temp -> suivant = B\par
 \ul Fait\ulnone\par
 \par
-\ul\fs28 Qualite et Croiser et Recopier et Coller_Liste :\par
+\ul\fs28 Fonctions necessaire au Quicksort : Qualite, Croiser, Recopier, Coller_Liste :\par
 \ulnone\b\fs22\lang1036 QualiteP\b0\par
 R\'e9sultat : Calcul des qualite des individus d'une population\par
 \par
@@ -263,6 +263,86 @@ RecopierP( Population p2, Population p1, int nbindiv, int LongIndiv ) -> Populat
 \ulnone\tab p2 = ajouter_queu_pop ( p2, p1 ->Indiv, LongIndiv)\par
 \tab RecopierP ( p2, ResteP(p1), nbindiv-1, LongIndiv)\par
 \ul FinSi\par
-\ulnone\f0\par
+\f0\fs28 Quicksort :\par
+
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ulnone\f3\fs22\lang12 R\'e9sultat : Population avec des individus tri\'e9s par qualit\'e9 croissante\par
+\par
+Parametrage : quicksort: population A -> population\par
+\par
+\b Cas trivial:\b0\par
+\par
+Si vide(A) Alors\par
+\tab quicksort=A\par
+Fin si\par
+\par
+\b Cas g\'e9n\'e9ral:\b0\par
+\par
+Creer(S1)\par
+Creer(S2)\par
+Creer(P)\par
+quicksort <- \'e9l\'e9ment_t\'eate(A))\par
+A <- Reste(A)\par
+\par
+Tant que non_vide(A) Faire\par
+\tab Si qualite(\'e9l\'e9ment_t\'eate((quicksort))) < qualite(\'e9l\'e9ment_t\'eate(A))) Faire\par
+\tab\tab S1 <- ajouter_queue(element_tete(A))\par
+\tab Sinon\par
+\tab\tab S2 <- ajouter_queue(element_tete(A))\par
+\tab Fin Si\par
+\tab A <- Reste(A)\par
+Fait\par
+\par
+Si non_vide (S1) Alors\par
+\tab quicksort <- coller_liste(quicksort(S1), quicksort)\par
+Fin Si\par
+Si non_vide (S2) Alors\par
+\tab quicksort <- coller_liste(quicksort, quicksort(S2))\par
+Fin Si\par
+\par
+\b Algorithme:\b0\par
+\par
+Si vide(A) Alors\par
+\tab quicksort=A\par
+Sinon\par
+\tab Creer(S1)\par
+\tab Creer(S2)\par
+\tab quicksort <- \'e9l\'e9ment_t\'eate(A))\par
+\tab A <- Reste(A)\par
+\par
+\tab Tant que non_vide(A) Faire\par
+\tab\tab Si qualite(\'e9l\'e9ment_t\'eate((quicksort))) < qualite(\'e9l\'e9ment_t\'eate(A))) Faire\par
+\tab\tab\tab S1 <- ajouter_queue(element_tete(A))\par
+\tab\tab Sinon\par
+\tab\tab\tab S2 <- ajouter_queue(element_tete(A))\par
+\tab\tab Fin Si\par
+\tab\tab A <- Reste(A)\par
+\tab Fait\par
+\tab Si non_vide (S1) Alors\tab\par
+\tab\tab quicksort <- coller_liste(quicksort(S1), quicksort)\par
+\tab Fin Si\par
+\tab Si non_vide (S2) Alors\par
+\tab\tab quicksort <- coller_liste(quicksort, quicksort(S2))\par
+\tab Fin Si\par
+
+\pard\sa200\sl276\slmult1 Fin Si\par
+\f0\lang1036\par
+\par
+\par
+\b\fs32 Difficult\'e9es rencontr\'e9es lors de la r\'e9alisation du projet :\par
+\par
+\b0\fs24 + R\'e9alisation du MakeFile :\par
+Apr\'e9s moult essaies infructueux cette \'e9tapes fut abandonn\'e9e. La compilation se passe bien lorsqu'elle est r\'e9alis\'e9 \'e0 la main ou sous un ide, mais de nombreuses erreurs li\'e9es aux includes ressortent lorsque l'on utilise le MakeFile.\par
+Cela n'a pas d'influence sur le fonctionnement du logiciel mais nous n'avons pas r\'e9ussi a comprendre nos erreur sur le MakeFile.\par
+\par
++ Comprehension du Quicksort :\par
+L'ennonc\'e9 a \'e9t\'e9 difficile a comprendre pour un des membre du binome. C'est l'esprit de l'algorithme qui n'est pas forcement explicite a la lecture de l'\'e9nonc\'e9. En effet celui ci avait compris que l'algorithme devait couper la liste en un point pr\'e9cis pour donner deux liste bien ordonn\'e9es.\par
+Hors cela est impossible et il faut cr\'e9er les deux liste en y placant les \'e9l\'e9ments de la liste de base en fonction de leur qualit\'e9.\par
++ Algorithme du tSelect et CroiserP :\par
+A faire par Top\par
+\par
+Le reste du projet n'a pas pos\'e9 de difficult\'e9es majeurs.\par
+\par
+\par
+\b\fs32 Jeu de test du logiciel :\b0\fs22\par
 }
  
