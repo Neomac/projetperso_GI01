@@ -140,7 +140,7 @@ Population SelectP(Population p, int tSelect, int taillePop, int LongIndiv)
 	return p;
 }
 
-//On colle deux liste l'une apres l'autre, l'odre dans l'appel de la fonction compte.
+//On colle deux listes l'une apres l'autre, l'ordre dans l'appel de la fonction compte.
 Population coller_liste(Population A, Population B){
     Population temp=A;
     while (temp->suivant!=NULL) {  //Parcour de la liste
