@@ -1,3 +1,5 @@
+/*ProjetLO44_De_Villeneuve_La_Colette_Arnaud_Galluet_Antoine*/
+
 #include "individu.h"
 #include "population.h"
 #include "foncpop.h"
