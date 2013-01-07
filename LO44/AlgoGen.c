@@ -3,10 +3,13 @@
 #include "individu.h"
 #include "population.h"
 #include "foncpop.h"
-#include "qualite.c"
 
 int main ()
 {
+	printf("\n\nGalluet Antoine");
+	printf("\nde Villeneuve la Colette Arnaud");
+	printf("\nINFO 1\n");
+	
 	printf("\n\n**********************************************************\n");
 	printf("\n\n          Projet d'algorithmique et programmation\n");
 	printf("\n                  LO44-Automne 2012\n");
